@@ -11,7 +11,7 @@ function nextele(lst,top,summ)
            if lst == []
                 []
            elseif top + first(lst) == summ 
-                append!([(top,first(lst),summ)],nextele(lst[2:size(lst)[1]],top,summ))
+                append!([((top,first(lst)),summ)],nextele(lst[2:size(lst)[1]],top,summ))
 		   else
 		        nextele(lst[2:size(lst)[1]],top,summ) 
 		   end
@@ -37,7 +37,7 @@ function nextele(lst,top)
            if lst == []
                 []
            else
-                append!([(top,first(lst),top+first(lst))],nextele(lst[2:size(lst)[1]],top)) 
+                append!([((top,first(lst)),top+first(lst))],nextele(lst[2:size(lst)[1]],top)) 
 		   end
        end
 
